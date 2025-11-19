@@ -37,3 +37,43 @@ Seja bem-vindo(a) ao meu GitHub! Aqui você encontra minha trajetória, experiê
 
 ---
 ![Contador de visitas](https://komarev.com/ghpvc/?username=Lubmatos&color=blue&style=for-the-badge)
+
+
+```bash
+// Projeto: Fechamento automático de janela com sensor de chuva
+// Hardware: Arduino Nano + Relé 5V + Transistor + Sensor YL-38/39 + Fim de curso
+
+int sensorChuva = A0;     // Entrada analógica do sensor de chuva
+int rele = 2;             // Pino que aciona o transistor e o relé
+int fimCurso = 3;         // Sensor de fim de curso
+
+int limiteChuva = 400;    // Threshold para detectar chuva
+
+void setup() {
+  pinMode(rele, OUTPUT);
+  pinMode(fimCurso, INPUT_PULLUP);
+  digitalWrite(rele, LOW);
+
+  Serial.begin(9600);
+}
+
+void loop() {
+
+  int valorChuva = analogRead(sensorChuva);
+  int estadoFimCurso = digitalRead(fimCurso);
+
+  Serial.print("Sensor = ");
+  Serial.println(valorChuva);
+
+  // Se detectar chuva e a janela ainda não estiver totalmente fechada
+  if (valorChuva < limiteChuva && estadoFimCurso == HIGH) {
+    digitalWrite(rele, HIGH);   // Aciona o motor
+  } 
+  else {
+    digitalWrite(rele, LOW);    // Desliga o motor
+  }
+
+  delay(200);
+}
+```
+
