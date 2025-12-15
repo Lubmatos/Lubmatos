@@ -36,7 +36,11 @@ Seja bem-vindo(a) ao meu GitHub! Aqui você encontra minha trajetória, experiê
 - 🛜Site: https://lubmatos.github.io/Site/
 
 ---
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Lubmatos&layout=compact&theme=default)
+
 ![Contador de visitas](https://komarev.com/ghpvc/?username=Lubmatos&color=blue&style=for-the-badge)
+
+
 
 
 
